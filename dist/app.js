@@ -9,6 +9,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 // Ejecutar express (http)
 const app = express_1.default();
 // Cargar ficheros rutas
+let mlbPlayer_router = require('./routes/mlb_player');
 // Middlewares
 app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.use(body_parser_1.default.json());
@@ -21,5 +22,6 @@ app.use((req, res, next) => {
     next();
 });
 // Añadir prefijos a rutas = cargar rutas
+app.use(mlbPlayer_router);
 // Exportar modulo (fichero actual)
 module.exports = app;

@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 const app = express();
     
 // Cargar ficheros rutas
-
+let mlbPlayer_router = require('./routes/mlb_player');
 
 // Middlewares
 app.use(bodyParser.urlencoded({extended:false}));
@@ -23,6 +23,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 
 // Añadir prefijos a rutas = cargar rutas
+app.use(mlbPlayer_router);
 
 
 // Exportar modulo (fichero actual)

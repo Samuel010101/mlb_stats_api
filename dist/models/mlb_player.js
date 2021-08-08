@@ -7,15 +7,8 @@ var MlbPlayerSchema = Schema({
     team: String,
     position: String,
     age: Number,
-    stats: {
-        j: Number,
-        tb: Number,
-        ca: Number,
-        ce: Number,
-        hs: Number,
-        hr: Number,
-        pro: Number
-    }
+    stats: [Number],
+    date: { type: Date, default: Date.now }
 });
 module.exports = mongoose.model('MlbPlayer', MlbPlayerSchema);
-// Estudios --> guarda documentos de este tipo y con estructura dentro de la coleccion
+// MlbPlayer --> guarda documentos de este tipo y con estructura dentro de la coleccion
